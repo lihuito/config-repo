@@ -1,0 +1,12 @@
+spring:
+  data:
+  # mongoDb配置
+    mongodb:
+#      host: 10.19.153.237
+      host: 192.168.20.8
+      port: 27017
+#      uri: mongodb://192.168.20.8:27017,192.168.20.14:27017
+      repositories:
+        enabled: true
+      database: jmyd_msbp
+      grid-fs-database: jmyd_msbp

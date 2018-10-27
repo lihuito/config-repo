@@ -1,0 +1,53 @@
+server:
+  tomcat:
+    uri-encoding: utf-8
+logging:
+  config: classpath:config/logback.xml
+spring:
+  #elasticsearch 配置
+  elasticsearch:
+    jest:
+      connection-timeout: 5000
+      uris: http://192.168.20.15:9200
+  # http 请求设置
+  http:
+    multipart:
+      enabled: true
+      max-file-size: 35Mb
+      max-request-size: 35Mb
+      resolve-lazily: false
+      file-size-threshold: 0
+    encoding:
+      charset: utf-8
+      enabled: true
+  # internationalization
+  messages:
+    cache-seconds: -1
+    encoding: UTF-8
+    fallback-to-system-locale: true
+    basename: messages
+    always-use-message-format: false
+  # freemarker配置
+  freemarker:
+    allow-request-override: false
+    allow-session-override: false
+    cache: false
+    charset: utf-8
+    check-template-location: true
+    content-type: text/html
+    enabled: true
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: true
+    prefer-file-system-access: true
+    prefix:
+    request-context-attribute: "requestContext"
+    settings:
+      date_format: yyyy-MM-dd
+      time_format: HH:mm:ss
+      datetime_format: yyyy-MM-dd HH:mm:ss
+      number_format: 0.##
+    template-loader-path: classpath:/templates/
+eureka:
+  client:
+    serviceUrl.defaultZone: http://localhost:31166/eureka/

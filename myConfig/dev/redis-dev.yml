@@ -1,0 +1,17 @@
+#spring web 配置
+spring:
+#redis配置
+  redis:
+    sentinel:
+      master: mymaster
+      nodes: 192.168.20.8:26379
+    database: 0
+    #host: 192.168.20.8
+    #port: 6379
+    #password: abcd1234
+    pool:
+      max-active: 8
+      max-idle: 8
+      max-wait: -1
+      min-idle: 0
+    timeout: 0
